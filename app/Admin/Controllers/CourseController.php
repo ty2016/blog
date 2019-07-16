@@ -93,22 +93,6 @@ class CourseController extends AdminController
             }
         }
         $form->listbox('tag_id', '标签')->options($tags);
-        // 在表单提交前调用
-        $form->saving(function (Form $form) {
-            $_POST['tag_id']=implode(',',$_POST['tag_id']);
-        });
-       $form->saved(function (Form $forms) {
-           $id=$forms->model()->id;
-            if ($id) {
-            $data = [];
-            if ($_POST['tag_id']) {
-                foreach ($_POST['tag_id'] as $k => $v) {
-                    $data[] = ['tag_id' => $v, 'course_id' => $id];
-                }
-                CourseTag::create($data);
-            }
-        }
-       });
         return $form;
     }
 }

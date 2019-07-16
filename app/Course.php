@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
     public $table="Course";
-    public function coursetag()
+    public function setTagIdAttribute($value)
     {
-        return $this->hasMany(CourseTag::class);
+        $this->attributes['tag_id'] = implode(',',$value);
     }
 }
