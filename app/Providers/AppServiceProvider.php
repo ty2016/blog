@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Course;
+use App\CourseTag;
+use App\Observer\CourseObserver;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +16,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+//       Course::observe(CourseObserver::class);
+       Course::saved(function (Course $course){
+           $data[]=['tag_id'=>$course->tag_id,'course_id'=>$course->id];
+           CourseTag::create($data);
+       });
     }
 
     /**
@@ -25,4 +32,5 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
+
 }
