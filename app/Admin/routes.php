@@ -13,6 +13,9 @@ Route::group([
     $router->get('/', 'HomeController@index')->name('admin.home');
     $router->resource('article', ArticleController::class);
     $router->resource('categories', CategoryController::class);
+    $router->resource('courses', CourseController::class);
+    $router->resource('tags', TagController::class);
+    $router->resource('experts', ExpertController::class);
     // $router->get('/article', 'ArticleController@index');
     // $router->resource('article'.'ArticleController');
 });
