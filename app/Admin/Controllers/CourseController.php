@@ -4,6 +4,7 @@ namespace App\Admin\Controllers;
 
 use App\Course;
 use App\Expert;
+use App\Tag;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -62,6 +63,15 @@ class CourseController extends AdminController
         $form->cropper('pic','视频封面图');
         $form->switch('is_push', '是否推荐');
         $form->url('video','视频地址');
+        $tag=Tag::all();
+        $tags=[];
+        if($tag){
+            foreach ($tag as $k=>$v){
+                $tags[$v['id']]=$v['title'];
+            }
+        }
+        $form->listbox('tag_id','标签')->options($tags);
+//        $form->checkbox('',)
         return $form;
     }
 }
