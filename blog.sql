@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : blog
+ Source Server         : localhost_3306
  Source Server Type    : MySQL
  Source Server Version : 50724
  Source Host           : localhost:3306
@@ -11,7 +11,7 @@
  Target Server Version : 50724
  File Encoding         : 65001
 
- Date: 15/07/2019 23:40:26
+ Date: 16/07/2019 19:24:11
 */
 
 SET NAMES utf8mb4;
@@ -32,7 +32,7 @@ CREATE TABLE `admin_menu`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of admin_menu
@@ -52,6 +52,11 @@ INSERT INTO `admin_menu` VALUES (12, 11, 9, 'Scaffold', 'fa-keyboard-o', 'helper
 INSERT INTO `admin_menu` VALUES (13, 11, 10, 'Database terminal', 'fa-database', 'helpers/terminal/database', NULL, '2019-06-29 23:52:09', '2019-06-29 23:52:09');
 INSERT INTO `admin_menu` VALUES (14, 11, 11, 'Laravel artisan', 'fa-terminal', 'helpers/terminal/artisan', NULL, '2019-06-29 23:52:09', '2019-06-29 23:52:09');
 INSERT INTO `admin_menu` VALUES (15, 11, 12, 'Routes', 'fa-list-alt', 'helpers/routes', NULL, '2019-06-29 23:52:09', '2019-06-29 23:52:09');
+INSERT INTO `admin_menu` VALUES (16, 0, 0, '教学视频', 'fa-archive', 'courses', NULL, '2019-07-16 09:28:35', '2019-07-16 10:17:35');
+INSERT INTO `admin_menu` VALUES (17, 0, 0, '标签管理', 'fa-adjust', 'tags', NULL, '2019-07-16 09:30:01', '2019-07-16 10:10:56');
+INSERT INTO `admin_menu` VALUES (18, 0, 0, '专家介绍', 'fa-bars', 'experts', NULL, '2019-07-16 09:30:40', '2019-07-16 10:24:30');
+INSERT INTO `admin_menu` VALUES (19, 0, 0, '图片管理', 'fa-area-chart', NULL, NULL, '2019-07-16 09:31:04', '2019-07-16 09:31:04');
+INSERT INTO `admin_menu` VALUES (20, 0, 0, '近期排班', 'fa-bars', NULL, NULL, '2019-07-16 09:31:18', '2019-07-16 09:31:18');
 
 -- ----------------------------
 -- Table structure for admin_operation_log
@@ -68,7 +73,7 @@ CREATE TABLE `admin_operation_log`  (
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `admin_operation_log_user_id_index`(`user_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 433 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 609 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of admin_operation_log
@@ -505,6 +510,182 @@ INSERT INTO `admin_operation_log` VALUES (429, 1, 'admin/categories/6/edit', 'GE
 INSERT INTO `admin_operation_log` VALUES (430, 1, 'admin/categories/6', 'PUT', '127.0.0.1', '{\"is_menu\":\"on\",\"is_display\":\"on\",\"sort\":\"2\",\"pid\":\"5\",\"name\":\"\\u5bb6\\u5ead\\u6559\\u80b2\",\"_token\":\"vhfhdg4JYTWnVXe0o3iSWLqnt9IHwhH1wVNBbXV6\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/blog.test\\/admin\\/categories\"}', '2019-07-15 23:39:42', '2019-07-15 23:39:42');
 INSERT INTO `admin_operation_log` VALUES (431, 1, 'admin/categories/6', 'GET', '127.0.0.1', '[]', '2019-07-15 23:39:44', '2019-07-15 23:39:44');
 INSERT INTO `admin_operation_log` VALUES (432, 1, 'admin/categories', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-15 23:39:48', '2019-07-15 23:39:48');
+INSERT INTO `admin_operation_log` VALUES (433, 1, 'admin', 'GET', '127.0.0.1', '[]', '2019-07-16 09:16:22', '2019-07-16 09:16:22');
+INSERT INTO `admin_operation_log` VALUES (434, 1, 'admin/categories', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 09:16:28', '2019-07-16 09:16:28');
+INSERT INTO `admin_operation_log` VALUES (435, 1, 'admin/article', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 09:17:51', '2019-07-16 09:17:51');
+INSERT INTO `admin_operation_log` VALUES (436, 1, 'admin/article/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 09:17:54', '2019-07-16 09:17:54');
+INSERT INTO `admin_operation_log` VALUES (437, 1, 'admin/article/create', 'GET', '127.0.0.1', '[]', '2019-07-16 09:20:18', '2019-07-16 09:20:18');
+INSERT INTO `admin_operation_log` VALUES (438, 1, 'admin/article/create', 'GET', '127.0.0.1', '[]', '2019-07-16 09:20:37', '2019-07-16 09:20:37');
+INSERT INTO `admin_operation_log` VALUES (439, 1, 'admin/article/create', 'GET', '127.0.0.1', '[]', '2019-07-16 09:20:44', '2019-07-16 09:20:44');
+INSERT INTO `admin_operation_log` VALUES (440, 1, 'admin/article/create', 'GET', '127.0.0.1', '[]', '2019-07-16 09:20:48', '2019-07-16 09:20:48');
+INSERT INTO `admin_operation_log` VALUES (441, 1, 'admin/article/create', 'GET', '127.0.0.1', '[]', '2019-07-16 09:21:48', '2019-07-16 09:21:48');
+INSERT INTO `admin_operation_log` VALUES (442, 1, 'admin/article/create', 'GET', '127.0.0.1', '[]', '2019-07-16 09:21:55', '2019-07-16 09:21:55');
+INSERT INTO `admin_operation_log` VALUES (443, 1, 'admin/categories', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 09:22:07', '2019-07-16 09:22:07');
+INSERT INTO `admin_operation_log` VALUES (444, 1, 'admin/article', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 09:22:09', '2019-07-16 09:22:09');
+INSERT INTO `admin_operation_log` VALUES (445, 1, 'admin/categories', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 09:22:14', '2019-07-16 09:22:14');
+INSERT INTO `admin_operation_log` VALUES (446, 1, 'admin/article', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 09:22:17', '2019-07-16 09:22:17');
+INSERT INTO `admin_operation_log` VALUES (447, 1, 'admin/auth/permissions', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 09:22:32', '2019-07-16 09:22:32');
+INSERT INTO `admin_operation_log` VALUES (448, 1, 'admin/categories', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 09:22:53', '2019-07-16 09:22:53');
+INSERT INTO `admin_operation_log` VALUES (449, 1, 'admin/article', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 09:22:55', '2019-07-16 09:22:55');
+INSERT INTO `admin_operation_log` VALUES (450, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 09:23:02', '2019-07-16 09:23:02');
+INSERT INTO `admin_operation_log` VALUES (451, 1, 'admin/categories', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 09:23:12', '2019-07-16 09:23:12');
+INSERT INTO `admin_operation_log` VALUES (452, 1, 'admin/categories', 'POST', '127.0.0.1', '{\"pid\":\"0\",\"name\":\"\\u6559\\u5e08\\u4e13\\u680f\",\"is_menu\":\"on\",\"is_display\":\"on\",\"sort\":\"1\",\"_token\":\"5jUtkC5uPK2PoXtSOmUSUH8oExS368IH7Bp8vhyp\"}', '2019-07-16 09:23:50', '2019-07-16 09:23:50');
+INSERT INTO `admin_operation_log` VALUES (453, 1, 'admin/categories', 'GET', '127.0.0.1', '[]', '2019-07-16 09:23:51', '2019-07-16 09:23:51');
+INSERT INTO `admin_operation_log` VALUES (454, 1, 'admin/categories', 'POST', '127.0.0.1', '{\"pid\":\"7\",\"name\":\"\\u54a8\\u8be2\\u5b9e\\u52a1\",\"is_menu\":\"on\",\"is_display\":\"on\",\"sort\":\"2\",\"_token\":\"5jUtkC5uPK2PoXtSOmUSUH8oExS368IH7Bp8vhyp\"}', '2019-07-16 09:24:35', '2019-07-16 09:24:35');
+INSERT INTO `admin_operation_log` VALUES (455, 1, 'admin/categories', 'GET', '127.0.0.1', '[]', '2019-07-16 09:24:36', '2019-07-16 09:24:36');
+INSERT INTO `admin_operation_log` VALUES (456, 1, 'admin/categories', 'POST', '127.0.0.1', '{\"pid\":\"7\",\"name\":\"\\u6559\\u5b66\\u8bfe\\u7a0b\",\"is_menu\":\"on\",\"is_display\":\"on\",\"sort\":\"2\",\"_token\":\"5jUtkC5uPK2PoXtSOmUSUH8oExS368IH7Bp8vhyp\"}', '2019-07-16 09:24:53', '2019-07-16 09:24:53');
+INSERT INTO `admin_operation_log` VALUES (457, 1, 'admin/categories', 'GET', '127.0.0.1', '[]', '2019-07-16 09:24:53', '2019-07-16 09:24:53');
+INSERT INTO `admin_operation_log` VALUES (458, 1, 'admin/article', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 09:25:06', '2019-07-16 09:25:06');
+INSERT INTO `admin_operation_log` VALUES (459, 1, 'admin/article/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 09:25:07', '2019-07-16 09:25:07');
+INSERT INTO `admin_operation_log` VALUES (460, 1, 'admin/article/create', 'GET', '127.0.0.1', '[]', '2019-07-16 09:25:27', '2019-07-16 09:25:27');
+INSERT INTO `admin_operation_log` VALUES (461, 1, 'admin/article/create', 'GET', '127.0.0.1', '[]', '2019-07-16 09:25:39', '2019-07-16 09:25:39');
+INSERT INTO `admin_operation_log` VALUES (462, 1, 'admin/categories', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 09:26:24', '2019-07-16 09:26:24');
+INSERT INTO `admin_operation_log` VALUES (463, 1, 'admin/categories', 'POST', '127.0.0.1', '{\"pid\":\"0\",\"name\":\"\\u4e2d\\u5fc3\\u4ecb\\u7ecd\",\"is_menu\":\"on\",\"is_display\":\"on\",\"sort\":\"3\",\"_token\":\"5jUtkC5uPK2PoXtSOmUSUH8oExS368IH7Bp8vhyp\"}', '2019-07-16 09:26:38', '2019-07-16 09:26:38');
+INSERT INTO `admin_operation_log` VALUES (464, 1, 'admin/categories', 'GET', '127.0.0.1', '[]', '2019-07-16 09:26:38', '2019-07-16 09:26:38');
+INSERT INTO `admin_operation_log` VALUES (465, 1, 'admin/categories/10/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 09:27:00', '2019-07-16 09:27:00');
+INSERT INTO `admin_operation_log` VALUES (466, 1, 'admin/categories', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 09:27:05', '2019-07-16 09:27:05');
+INSERT INTO `admin_operation_log` VALUES (467, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 09:28:01', '2019-07-16 09:28:01');
+INSERT INTO `admin_operation_log` VALUES (468, 1, 'admin/categories', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 09:28:05', '2019-07-16 09:28:05');
+INSERT INTO `admin_operation_log` VALUES (469, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 09:28:09', '2019-07-16 09:28:09');
+INSERT INTO `admin_operation_log` VALUES (470, 1, 'admin/auth/menu', 'POST', '127.0.0.1', '{\"parent_id\":\"0\",\"title\":\"\\u6559\\u5b66\\u89c6\\u9891\",\"icon\":\"fa-archive\",\"uri\":null,\"roles\":[null],\"permission\":null,\"_token\":\"5jUtkC5uPK2PoXtSOmUSUH8oExS368IH7Bp8vhyp\"}', '2019-07-16 09:28:35', '2019-07-16 09:28:35');
+INSERT INTO `admin_operation_log` VALUES (471, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-07-16 09:28:35', '2019-07-16 09:28:35');
+INSERT INTO `admin_operation_log` VALUES (472, 1, 'admin/auth/menu', 'POST', '127.0.0.1', '{\"parent_id\":\"16\",\"title\":\"\\u89c6\\u9891\\u6807\\u7b7e\",\"icon\":\"fa-adjust\",\"uri\":null,\"roles\":[null],\"permission\":null,\"_token\":\"5jUtkC5uPK2PoXtSOmUSUH8oExS368IH7Bp8vhyp\"}', '2019-07-16 09:30:01', '2019-07-16 09:30:01');
+INSERT INTO `admin_operation_log` VALUES (473, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-07-16 09:30:01', '2019-07-16 09:30:01');
+INSERT INTO `admin_operation_log` VALUES (474, 1, 'admin/auth/menu', 'POST', '127.0.0.1', '{\"parent_id\":\"0\",\"title\":\"\\u4e13\\u5bb6\\u4ecb\\u7ecd\",\"icon\":\"fa-bars\",\"uri\":null,\"roles\":[null],\"permission\":null,\"_token\":\"5jUtkC5uPK2PoXtSOmUSUH8oExS368IH7Bp8vhyp\"}', '2019-07-16 09:30:40', '2019-07-16 09:30:40');
+INSERT INTO `admin_operation_log` VALUES (475, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-07-16 09:30:41', '2019-07-16 09:30:41');
+INSERT INTO `admin_operation_log` VALUES (476, 1, 'admin/auth/menu', 'POST', '127.0.0.1', '{\"parent_id\":\"0\",\"title\":\"\\u56fe\\u7247\\u7ba1\\u7406\",\"icon\":\"fa-area-chart\",\"uri\":null,\"roles\":[null],\"permission\":null,\"_token\":\"5jUtkC5uPK2PoXtSOmUSUH8oExS368IH7Bp8vhyp\"}', '2019-07-16 09:31:04', '2019-07-16 09:31:04');
+INSERT INTO `admin_operation_log` VALUES (477, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-07-16 09:31:04', '2019-07-16 09:31:04');
+INSERT INTO `admin_operation_log` VALUES (478, 1, 'admin/auth/menu', 'POST', '127.0.0.1', '{\"parent_id\":\"0\",\"title\":\"\\u8fd1\\u671f\\u6392\\u73ed\",\"icon\":\"fa-bars\",\"uri\":null,\"roles\":[null],\"permission\":null,\"_token\":\"5jUtkC5uPK2PoXtSOmUSUH8oExS368IH7Bp8vhyp\"}', '2019-07-16 09:31:18', '2019-07-16 09:31:18');
+INSERT INTO `admin_operation_log` VALUES (479, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-07-16 09:31:18', '2019-07-16 09:31:18');
+INSERT INTO `admin_operation_log` VALUES (480, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-07-16 09:33:40', '2019-07-16 09:33:40');
+INSERT INTO `admin_operation_log` VALUES (481, 1, 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 09:33:43', '2019-07-16 09:33:43');
+INSERT INTO `admin_operation_log` VALUES (482, 1, 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 09:34:14', '2019-07-16 09:34:14');
+INSERT INTO `admin_operation_log` VALUES (483, 1, 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:08:39', '2019-07-16 10:08:39');
+INSERT INTO `admin_operation_log` VALUES (484, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:08:45', '2019-07-16 10:08:45');
+INSERT INTO `admin_operation_log` VALUES (485, 1, 'admin/auth/menu/17/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:08:49', '2019-07-16 10:08:49');
+INSERT INTO `admin_operation_log` VALUES (486, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:08:57', '2019-07-16 10:08:57');
+INSERT INTO `admin_operation_log` VALUES (487, 1, 'admin/auth/menu/17/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:09:00', '2019-07-16 10:09:00');
+INSERT INTO `admin_operation_log` VALUES (488, 1, 'admin/auth/menu/17', 'PUT', '127.0.0.1', '{\"parent_id\":\"16\",\"title\":\"\\u6807\\u7b7e\",\"icon\":\"fa-adjust\",\"uri\":null,\"roles\":[null],\"permission\":null,\"_token\":\"5jUtkC5uPK2PoXtSOmUSUH8oExS368IH7Bp8vhyp\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/blog.test\\/admin\\/auth\\/menu\"}', '2019-07-16 10:09:05', '2019-07-16 10:09:05');
+INSERT INTO `admin_operation_log` VALUES (489, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-07-16 10:09:05', '2019-07-16 10:09:05');
+INSERT INTO `admin_operation_log` VALUES (490, 1, 'admin/auth/menu/17/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:09:09', '2019-07-16 10:09:09');
+INSERT INTO `admin_operation_log` VALUES (491, 1, 'admin/auth/menu/17', 'PUT', '127.0.0.1', '{\"parent_id\":\"0\",\"title\":\"\\u6807\\u7b7e\\u7ba1\\u7406\",\"icon\":\"fa-adjust\",\"uri\":null,\"roles\":[null],\"permission\":null,\"_token\":\"5jUtkC5uPK2PoXtSOmUSUH8oExS368IH7Bp8vhyp\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/blog.test\\/admin\\/auth\\/menu\"}', '2019-07-16 10:09:21', '2019-07-16 10:09:21');
+INSERT INTO `admin_operation_log` VALUES (492, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-07-16 10:09:21', '2019-07-16 10:09:21');
+INSERT INTO `admin_operation_log` VALUES (493, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-07-16 10:09:26', '2019-07-16 10:09:26');
+INSERT INTO `admin_operation_log` VALUES (494, 1, 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:09:29', '2019-07-16 10:09:29');
+INSERT INTO `admin_operation_log` VALUES (495, 1, 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:09:41', '2019-07-16 10:09:41');
+INSERT INTO `admin_operation_log` VALUES (496, 1, 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:09:45', '2019-07-16 10:09:45');
+INSERT INTO `admin_operation_log` VALUES (497, 1, 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:09:46', '2019-07-16 10:09:46');
+INSERT INTO `admin_operation_log` VALUES (498, 1, 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:09:47', '2019-07-16 10:09:47');
+INSERT INTO `admin_operation_log` VALUES (499, 1, 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:09:48', '2019-07-16 10:09:48');
+INSERT INTO `admin_operation_log` VALUES (500, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:09:58', '2019-07-16 10:09:58');
+INSERT INTO `admin_operation_log` VALUES (501, 1, 'admin/auth/menu/17/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:10:21', '2019-07-16 10:10:21');
+INSERT INTO `admin_operation_log` VALUES (502, 1, 'admin/auth/menu/17', 'PUT', '127.0.0.1', '{\"parent_id\":\"0\",\"title\":\"\\u6807\\u7b7e\\u7ba1\\u7406\",\"icon\":\"fa-adjust\",\"uri\":\"tags\",\"roles\":[null],\"permission\":null,\"_token\":\"5jUtkC5uPK2PoXtSOmUSUH8oExS368IH7Bp8vhyp\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/blog.test\\/admin\\/auth\\/menu\"}', '2019-07-16 10:10:56', '2019-07-16 10:10:56');
+INSERT INTO `admin_operation_log` VALUES (503, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-07-16 10:10:56', '2019-07-16 10:10:56');
+INSERT INTO `admin_operation_log` VALUES (504, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-07-16 10:10:59', '2019-07-16 10:10:59');
+INSERT INTO `admin_operation_log` VALUES (505, 1, 'admin/tags', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:11:04', '2019-07-16 10:11:04');
+INSERT INTO `admin_operation_log` VALUES (506, 1, 'admin/tags/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:11:06', '2019-07-16 10:11:06');
+INSERT INTO `admin_operation_log` VALUES (507, 1, 'admin/tags/create', 'GET', '127.0.0.1', '[]', '2019-07-16 10:11:53', '2019-07-16 10:11:53');
+INSERT INTO `admin_operation_log` VALUES (508, 1, 'admin/tags', 'POST', '127.0.0.1', '{\"title\":\"\\u4eba\\u9645\\u5173\\u7cfb\",\"_token\":\"5jUtkC5uPK2PoXtSOmUSUH8oExS368IH7Bp8vhyp\"}', '2019-07-16 10:12:18', '2019-07-16 10:12:18');
+INSERT INTO `admin_operation_log` VALUES (509, 1, 'admin/tags/create', 'GET', '127.0.0.1', '[]', '2019-07-16 10:12:18', '2019-07-16 10:12:18');
+INSERT INTO `admin_operation_log` VALUES (510, 1, 'admin/tags', 'POST', '127.0.0.1', '{\"title\":\"\\u4eba\\u9645\\u5173\\u7cfb\",\"_token\":\"5jUtkC5uPK2PoXtSOmUSUH8oExS368IH7Bp8vhyp\"}', '2019-07-16 10:13:04', '2019-07-16 10:13:04');
+INSERT INTO `admin_operation_log` VALUES (511, 1, 'admin/tags', 'GET', '127.0.0.1', '[]', '2019-07-16 10:13:04', '2019-07-16 10:13:04');
+INSERT INTO `admin_operation_log` VALUES (512, 1, 'admin/tags/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:13:12', '2019-07-16 10:13:12');
+INSERT INTO `admin_operation_log` VALUES (513, 1, 'admin/tags/create', 'GET', '127.0.0.1', '[]', '2019-07-16 10:13:26', '2019-07-16 10:13:26');
+INSERT INTO `admin_operation_log` VALUES (514, 1, 'admin/tags', 'POST', '127.0.0.1', '{\"title\":\"\\u5b66\\u4e60\\u4e60\\u60ef\",\"_token\":\"5jUtkC5uPK2PoXtSOmUSUH8oExS368IH7Bp8vhyp\"}', '2019-07-16 10:13:46', '2019-07-16 10:13:46');
+INSERT INTO `admin_operation_log` VALUES (515, 1, 'admin/tags', 'GET', '127.0.0.1', '[]', '2019-07-16 10:13:46', '2019-07-16 10:13:46');
+INSERT INTO `admin_operation_log` VALUES (516, 1, 'admin/tags/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:13:51', '2019-07-16 10:13:51');
+INSERT INTO `admin_operation_log` VALUES (517, 1, 'admin/tags', 'POST', '127.0.0.1', '{\"title\":\"\\u4e2a\\u4eba\\u6210\\u957f\",\"_token\":\"5jUtkC5uPK2PoXtSOmUSUH8oExS368IH7Bp8vhyp\",\"_previous_\":\"http:\\/\\/blog.test\\/admin\\/tags\"}', '2019-07-16 10:13:53', '2019-07-16 10:13:53');
+INSERT INTO `admin_operation_log` VALUES (518, 1, 'admin/tags', 'GET', '127.0.0.1', '[]', '2019-07-16 10:13:53', '2019-07-16 10:13:53');
+INSERT INTO `admin_operation_log` VALUES (519, 1, 'admin/tags/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:13:59', '2019-07-16 10:13:59');
+INSERT INTO `admin_operation_log` VALUES (520, 1, 'admin/tags', 'POST', '127.0.0.1', '{\"title\":\"\\u884c\\u4e3a\\u8868\\u73b0\",\"_token\":\"5jUtkC5uPK2PoXtSOmUSUH8oExS368IH7Bp8vhyp\",\"_previous_\":\"http:\\/\\/blog.test\\/admin\\/tags\"}', '2019-07-16 10:14:00', '2019-07-16 10:14:00');
+INSERT INTO `admin_operation_log` VALUES (521, 1, 'admin/tags', 'GET', '127.0.0.1', '[]', '2019-07-16 10:14:01', '2019-07-16 10:14:01');
+INSERT INTO `admin_operation_log` VALUES (522, 1, 'admin/tags/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:15:01', '2019-07-16 10:15:01');
+INSERT INTO `admin_operation_log` VALUES (523, 1, 'admin/tags', 'POST', '127.0.0.1', '{\"title\":\"\\u7535\\u8bdd\\u54a8\\u8be2\\u6280\\u80fd\\u57f9\\u8bad\",\"_token\":\"5jUtkC5uPK2PoXtSOmUSUH8oExS368IH7Bp8vhyp\",\"_previous_\":\"http:\\/\\/blog.test\\/admin\\/tags\"}', '2019-07-16 10:15:03', '2019-07-16 10:15:03');
+INSERT INTO `admin_operation_log` VALUES (524, 1, 'admin/tags', 'GET', '127.0.0.1', '[]', '2019-07-16 10:15:04', '2019-07-16 10:15:04');
+INSERT INTO `admin_operation_log` VALUES (525, 1, 'admin/tags/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:15:34', '2019-07-16 10:15:34');
+INSERT INTO `admin_operation_log` VALUES (526, 1, 'admin/tags', 'POST', '127.0.0.1', '{\"title\":\"\\u5fc3\\u7406\\u54a8\\u8be2\\u6280\\u80fd\\u57f9\\u8bad\",\"_token\":\"5jUtkC5uPK2PoXtSOmUSUH8oExS368IH7Bp8vhyp\",\"_previous_\":\"http:\\/\\/blog.test\\/admin\\/tags\"}', '2019-07-16 10:15:36', '2019-07-16 10:15:36');
+INSERT INTO `admin_operation_log` VALUES (527, 1, 'admin/tags', 'GET', '127.0.0.1', '[]', '2019-07-16 10:15:36', '2019-07-16 10:15:36');
+INSERT INTO `admin_operation_log` VALUES (528, 1, 'admin/tags/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:15:44', '2019-07-16 10:15:44');
+INSERT INTO `admin_operation_log` VALUES (529, 1, 'admin/tags', 'POST', '127.0.0.1', '{\"title\":\"\\u5371\\u673a\\u5e72\\u9884\\u6280\\u80fd\\u57f9\\u8bad\",\"_token\":\"5jUtkC5uPK2PoXtSOmUSUH8oExS368IH7Bp8vhyp\",\"_previous_\":\"http:\\/\\/blog.test\\/admin\\/tags\"}', '2019-07-16 10:15:45', '2019-07-16 10:15:45');
+INSERT INTO `admin_operation_log` VALUES (530, 1, 'admin/tags', 'GET', '127.0.0.1', '[]', '2019-07-16 10:15:46', '2019-07-16 10:15:46');
+INSERT INTO `admin_operation_log` VALUES (531, 1, 'admin/tags/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:15:53', '2019-07-16 10:15:53');
+INSERT INTO `admin_operation_log` VALUES (532, 1, 'admin/tags', 'POST', '127.0.0.1', '{\"title\":\"\\u5c0f\\u5b66\",\"_token\":\"5jUtkC5uPK2PoXtSOmUSUH8oExS368IH7Bp8vhyp\",\"_previous_\":\"http:\\/\\/blog.test\\/admin\\/tags\"}', '2019-07-16 10:15:57', '2019-07-16 10:15:57');
+INSERT INTO `admin_operation_log` VALUES (533, 1, 'admin/tags', 'GET', '127.0.0.1', '[]', '2019-07-16 10:15:58', '2019-07-16 10:15:58');
+INSERT INTO `admin_operation_log` VALUES (534, 1, 'admin/tags/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:15:59', '2019-07-16 10:15:59');
+INSERT INTO `admin_operation_log` VALUES (535, 1, 'admin/tags', 'POST', '127.0.0.1', '{\"title\":\"\\u521d\\u4e2d\",\"_token\":\"5jUtkC5uPK2PoXtSOmUSUH8oExS368IH7Bp8vhyp\",\"_previous_\":\"http:\\/\\/blog.test\\/admin\\/tags\"}', '2019-07-16 10:16:02', '2019-07-16 10:16:02');
+INSERT INTO `admin_operation_log` VALUES (536, 1, 'admin/tags', 'GET', '127.0.0.1', '[]', '2019-07-16 10:16:02', '2019-07-16 10:16:02');
+INSERT INTO `admin_operation_log` VALUES (537, 1, 'admin/tags/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:16:04', '2019-07-16 10:16:04');
+INSERT INTO `admin_operation_log` VALUES (538, 1, 'admin/tags', 'POST', '127.0.0.1', '{\"title\":\"\\u9ad8\\u4e2d\",\"_token\":\"5jUtkC5uPK2PoXtSOmUSUH8oExS368IH7Bp8vhyp\",\"_previous_\":\"http:\\/\\/blog.test\\/admin\\/tags\"}', '2019-07-16 10:16:07', '2019-07-16 10:16:07');
+INSERT INTO `admin_operation_log` VALUES (539, 1, 'admin/tags', 'GET', '127.0.0.1', '[]', '2019-07-16 10:16:08', '2019-07-16 10:16:08');
+INSERT INTO `admin_operation_log` VALUES (540, 1, 'admin/tags', 'GET', '127.0.0.1', '{\"per_page\":\"10\",\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:16:14', '2019-07-16 10:16:14');
+INSERT INTO `admin_operation_log` VALUES (541, 1, 'admin/tags', 'GET', '127.0.0.1', '{\"per_page\":\"10\"}', '2019-07-16 10:16:35', '2019-07-16 10:16:35');
+INSERT INTO `admin_operation_log` VALUES (542, 1, 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:17:02', '2019-07-16 10:17:02');
+INSERT INTO `admin_operation_log` VALUES (543, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:17:20', '2019-07-16 10:17:20');
+INSERT INTO `admin_operation_log` VALUES (544, 1, 'admin/auth/menu/16/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:17:24', '2019-07-16 10:17:24');
+INSERT INTO `admin_operation_log` VALUES (545, 1, 'admin/auth/menu/16', 'PUT', '127.0.0.1', '{\"parent_id\":\"0\",\"title\":\"\\u6559\\u5b66\\u89c6\\u9891\",\"icon\":\"fa-archive\",\"uri\":\"courses\",\"roles\":[null],\"permission\":null,\"_token\":\"5jUtkC5uPK2PoXtSOmUSUH8oExS368IH7Bp8vhyp\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/blog.test\\/admin\\/auth\\/menu\"}', '2019-07-16 10:17:35', '2019-07-16 10:17:35');
+INSERT INTO `admin_operation_log` VALUES (546, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-07-16 10:17:35', '2019-07-16 10:17:35');
+INSERT INTO `admin_operation_log` VALUES (547, 1, 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:17:38', '2019-07-16 10:17:38');
+INSERT INTO `admin_operation_log` VALUES (548, 1, 'admin', 'GET', '127.0.0.1', '[]', '2019-07-16 10:17:40', '2019-07-16 10:17:40');
+INSERT INTO `admin_operation_log` VALUES (549, 1, 'admin/tags', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:17:43', '2019-07-16 10:17:43');
+INSERT INTO `admin_operation_log` VALUES (550, 1, 'admin/article', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:17:44', '2019-07-16 10:17:44');
+INSERT INTO `admin_operation_log` VALUES (551, 1, 'admin/categories', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:17:45', '2019-07-16 10:17:45');
+INSERT INTO `admin_operation_log` VALUES (552, 1, 'admin/courses', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:17:46', '2019-07-16 10:17:46');
+INSERT INTO `admin_operation_log` VALUES (553, 1, 'admin/courses', 'GET', '127.0.0.1', '[]', '2019-07-16 10:18:37', '2019-07-16 10:18:37');
+INSERT INTO `admin_operation_log` VALUES (554, 1, 'admin/courses', 'GET', '127.0.0.1', '[]', '2019-07-16 10:19:02', '2019-07-16 10:19:02');
+INSERT INTO `admin_operation_log` VALUES (555, 1, 'admin/courses/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:19:05', '2019-07-16 10:19:05');
+INSERT INTO `admin_operation_log` VALUES (556, 1, 'admin/courses/create', 'GET', '127.0.0.1', '[]', '2019-07-16 10:20:18', '2019-07-16 10:20:18');
+INSERT INTO `admin_operation_log` VALUES (557, 1, 'admin/courses/create', 'GET', '127.0.0.1', '[]', '2019-07-16 10:21:40', '2019-07-16 10:21:40');
+INSERT INTO `admin_operation_log` VALUES (558, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:24:17', '2019-07-16 10:24:17');
+INSERT INTO `admin_operation_log` VALUES (559, 1, 'admin/auth/menu/18/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:24:23', '2019-07-16 10:24:23');
+INSERT INTO `admin_operation_log` VALUES (560, 1, 'admin/auth/menu/18', 'PUT', '127.0.0.1', '{\"parent_id\":\"0\",\"title\":\"\\u4e13\\u5bb6\\u4ecb\\u7ecd\",\"icon\":\"fa-bars\",\"uri\":\"experts\",\"roles\":[null],\"permission\":null,\"_token\":\"5jUtkC5uPK2PoXtSOmUSUH8oExS368IH7Bp8vhyp\",\"_method\":\"PUT\",\"_previous_\":\"http:\\/\\/blog.test\\/admin\\/auth\\/menu\"}', '2019-07-16 10:24:30', '2019-07-16 10:24:30');
+INSERT INTO `admin_operation_log` VALUES (561, 1, 'admin/auth/menu', 'GET', '127.0.0.1', '[]', '2019-07-16 10:24:31', '2019-07-16 10:24:31');
+INSERT INTO `admin_operation_log` VALUES (562, 1, 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:24:38', '2019-07-16 10:24:38');
+INSERT INTO `admin_operation_log` VALUES (563, 1, 'admin', 'GET', '127.0.0.1', '[]', '2019-07-16 10:24:40', '2019-07-16 10:24:40');
+INSERT INTO `admin_operation_log` VALUES (564, 1, 'admin/experts', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:24:44', '2019-07-16 10:24:44');
+INSERT INTO `admin_operation_log` VALUES (565, 1, 'admin/experts/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:24:46', '2019-07-16 10:24:46');
+INSERT INTO `admin_operation_log` VALUES (566, 1, 'admin/experts/create', 'GET', '127.0.0.1', '[]', '2019-07-16 10:26:13', '2019-07-16 10:26:13');
+INSERT INTO `admin_operation_log` VALUES (567, 1, 'admin/experts/create', 'GET', '127.0.0.1', '[]', '2019-07-16 10:27:33', '2019-07-16 10:27:33');
+INSERT INTO `admin_operation_log` VALUES (568, 1, 'admin/experts', 'POST', '127.0.0.1', '{\"realname\":\"\\u6731\\u747e\",\"agency\":\"\\u5fc3\\u7406\\u54a8\\u8be2\\u673a\\u6784\",\"qualification\":\"\\u56fd\\u5bb6\\u4e8c\\u7ea7\\u5fc3\\u7406\\u54a8\\u8be2\\u5e08\",\"certificate_number\":\"0610000008200491\",\"introduction\":\"\\u4e2a\\u4eba\\u8bf4\\u660e\\uff1a \\u6559\\u80b2\\u5b66\\u5b66\\u58eb\\uff0c\\u526f\\u6559\\u6388\\uff0c\\u73b0\\u4efb\\u804c\\u4e8e\\u5e38\\u5dde\\u5f00\\u653e\\u5927\\u5b66\\u56fe\\u4e66\\u9986\\u9986\\u957f\\u4ee5\\u53ca\\u5b66\\u6821\\u5fc3\\u7406\\u670d\\u52a1\\u4e2d\\u5fc3\\u8d1f\\u8d23\\u4eba\\u3002\\u56fd\\u5bb6\\u9ad8\\u7ea7\\u5a5a\\u59fb\\u5bb6\\u5ead\\u54a8\\u8be2\\u5e08\\u3002\\u64c5\\u957f\\u513f\\u7ae5\\u5fc3\\u7406\\u8f85\\u5bfc\\u3001\\u5bb6\\u5ead\\u6559\\u80b2\\u8f85\\u5bfc\\u3001\\u5bb6\\u5ead\\u6559\\u80b2\\u6f14\\u8bb2\\u3002\\u4eb2\\u5b50\\u6c9f\\u901a\\u3001\\u60c5\\u7eea\\u3001\\u804c\\u4e1a\\u89c4\\u5212\\u7c7b\\u7b49\\u95ee\\u9898\\u7684\\u54a8\\u8be2\\u8f85\\u5bfc\\u3002\",\"_token\":\"5jUtkC5uPK2PoXtSOmUSUH8oExS368IH7Bp8vhyp\"}', '2019-07-16 10:29:23', '2019-07-16 10:29:23');
+INSERT INTO `admin_operation_log` VALUES (569, 1, 'admin/experts', 'GET', '127.0.0.1', '[]', '2019-07-16 10:29:24', '2019-07-16 10:29:24');
+INSERT INTO `admin_operation_log` VALUES (570, 1, 'admin/experts', 'GET', '127.0.0.1', '[]', '2019-07-16 10:32:07', '2019-07-16 10:32:07');
+INSERT INTO `admin_operation_log` VALUES (571, 1, 'admin/experts', 'GET', '127.0.0.1', '[]', '2019-07-16 10:32:18', '2019-07-16 10:32:18');
+INSERT INTO `admin_operation_log` VALUES (572, 1, 'admin/experts/1/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:32:32', '2019-07-16 10:32:32');
+INSERT INTO `admin_operation_log` VALUES (573, 1, 'admin/experts', 'GET', '127.0.0.1', '[]', '2019-07-16 10:32:48', '2019-07-16 10:32:48');
+INSERT INTO `admin_operation_log` VALUES (574, 1, 'admin/experts', 'GET', '127.0.0.1', '[]', '2019-07-16 10:33:48', '2019-07-16 10:33:48');
+INSERT INTO `admin_operation_log` VALUES (575, 1, 'admin/experts', 'GET', '127.0.0.1', '[]', '2019-07-16 10:34:06', '2019-07-16 10:34:06');
+INSERT INTO `admin_operation_log` VALUES (576, 1, 'admin/experts', 'GET', '127.0.0.1', '[]', '2019-07-16 10:34:24', '2019-07-16 10:34:24');
+INSERT INTO `admin_operation_log` VALUES (577, 1, 'admin/experts', 'GET', '127.0.0.1', '{\"id\":null,\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:34:46', '2019-07-16 10:34:46');
+INSERT INTO `admin_operation_log` VALUES (578, 1, 'admin/experts/1/edit', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:44:50', '2019-07-16 10:44:50');
+INSERT INTO `admin_operation_log` VALUES (579, 1, 'admin/courses', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:45:12', '2019-07-16 10:45:12');
+INSERT INTO `admin_operation_log` VALUES (580, 1, 'admin/courses/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:45:15', '2019-07-16 10:45:15');
+INSERT INTO `admin_operation_log` VALUES (581, 1, 'admin/courses/create', 'GET', '127.0.0.1', '[]', '2019-07-16 10:48:12', '2019-07-16 10:48:12');
+INSERT INTO `admin_operation_log` VALUES (582, 1, 'admin/courses/create', 'GET', '127.0.0.1', '[]', '2019-07-16 10:49:31', '2019-07-16 10:49:31');
+INSERT INTO `admin_operation_log` VALUES (583, 1, 'admin/courses/create', 'GET', '127.0.0.1', '[]', '2019-07-16 10:52:44', '2019-07-16 10:52:44');
+INSERT INTO `admin_operation_log` VALUES (584, 1, 'admin/courses/create', 'GET', '127.0.0.1', '[]', '2019-07-16 10:53:05', '2019-07-16 10:53:05');
+INSERT INTO `admin_operation_log` VALUES (585, 1, 'admin/article', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:54:04', '2019-07-16 10:54:04');
+INSERT INTO `admin_operation_log` VALUES (586, 1, 'admin/article/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:54:06', '2019-07-16 10:54:06');
+INSERT INTO `admin_operation_log` VALUES (587, 1, 'admin/courses', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:54:18', '2019-07-16 10:54:18');
+INSERT INTO `admin_operation_log` VALUES (588, 1, 'admin/tags', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:54:19', '2019-07-16 10:54:19');
+INSERT INTO `admin_operation_log` VALUES (589, 1, 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:54:23', '2019-07-16 10:54:23');
+INSERT INTO `admin_operation_log` VALUES (590, 1, 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:54:24', '2019-07-16 10:54:24');
+INSERT INTO `admin_operation_log` VALUES (591, 1, 'admin/experts', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:54:25', '2019-07-16 10:54:25');
+INSERT INTO `admin_operation_log` VALUES (592, 1, 'admin/tags', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:54:27', '2019-07-16 10:54:27');
+INSERT INTO `admin_operation_log` VALUES (593, 1, 'admin/categories', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:54:27', '2019-07-16 10:54:27');
+INSERT INTO `admin_operation_log` VALUES (594, 1, 'admin/courses', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:55:08', '2019-07-16 10:55:08');
+INSERT INTO `admin_operation_log` VALUES (595, 1, 'admin/courses/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 10:55:09', '2019-07-16 10:55:09');
+INSERT INTO `admin_operation_log` VALUES (596, 1, 'admin/courses/create', 'GET', '127.0.0.1', '[]', '2019-07-16 10:55:11', '2019-07-16 10:55:11');
+INSERT INTO `admin_operation_log` VALUES (597, 1, 'admin/courses/create', 'GET', '127.0.0.1', '[]', '2019-07-16 10:59:38', '2019-07-16 10:59:38');
+INSERT INTO `admin_operation_log` VALUES (598, 1, 'admin/courses/create', 'GET', '127.0.0.1', '[]', '2019-07-16 16:59:03', '2019-07-16 16:59:03');
+INSERT INTO `admin_operation_log` VALUES (599, 1, 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 18:21:41', '2019-07-16 18:21:41');
+INSERT INTO `admin_operation_log` VALUES (600, 1, 'admin/courses', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 18:21:47', '2019-07-16 18:21:47');
+INSERT INTO `admin_operation_log` VALUES (601, 1, 'admin/courses/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 18:21:50', '2019-07-16 18:21:50');
+INSERT INTO `admin_operation_log` VALUES (602, 1, 'admin/tags', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 19:13:25', '2019-07-16 19:13:25');
+INSERT INTO `admin_operation_log` VALUES (603, 1, 'admin/tags/1', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 19:13:29', '2019-07-16 19:13:29');
+INSERT INTO `admin_operation_log` VALUES (604, 1, 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 19:13:35', '2019-07-16 19:13:35');
+INSERT INTO `admin_operation_log` VALUES (605, 1, 'admin', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 19:13:37', '2019-07-16 19:13:37');
+INSERT INTO `admin_operation_log` VALUES (606, 1, 'admin/tags', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 19:13:38', '2019-07-16 19:13:38');
+INSERT INTO `admin_operation_log` VALUES (607, 1, 'admin/courses', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 19:13:39', '2019-07-16 19:13:39');
+INSERT INTO `admin_operation_log` VALUES (608, 1, 'admin/courses/create', 'GET', '127.0.0.1', '{\"_pjax\":\"#pjax-container\"}', '2019-07-16 19:13:41', '2019-07-16 19:13:41');
 
 -- ----------------------------
 -- Table structure for admin_permissions
@@ -680,7 +861,7 @@ CREATE TABLE `category`  (
   `is_display` tinyint(2) NULL DEFAULT NULL,
   `sort` int(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of category
@@ -691,6 +872,75 @@ INSERT INTO `category` VALUES (3, 1, '通知公告', 1, 1, 2);
 INSERT INTO `category` VALUES (4, 5, '心灵之约', 1, 1, 2);
 INSERT INTO `category` VALUES (5, 0, '家教心理', 1, 1, 0);
 INSERT INTO `category` VALUES (6, 5, '家庭教育', 1, 1, 2);
+INSERT INTO `category` VALUES (7, 0, '教师专栏', 1, 1, 1);
+INSERT INTO `category` VALUES (8, 7, '咨询实务', 1, 1, 2);
+INSERT INTO `category` VALUES (9, 7, '教学课程', 1, 1, 2);
+INSERT INTO `category` VALUES (10, 0, '中心介绍', 1, 1, 3);
+
+-- ----------------------------
+-- Table structure for course
+-- ----------------------------
+DROP TABLE IF EXISTS `course`;
+CREATE TABLE `course`  (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '课程标题',
+  `summary` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '课程简介',
+  `pic` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '课程封面图',
+  `video` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '课程视频',
+  `experts_id` int(10) UNSIGNED NOT NULL COMMENT '老师id',
+  `category_id` int(10) UNSIGNED NOT NULL COMMENT '课程分类id',
+  `is_push` tinyint(3) UNSIGNED NOT NULL COMMENT '是否热门',
+  `created_at` timestamp(0) NULL DEFAULT NULL,
+  `updated_at` timestamp(0) NULL DEFAULT NULL,
+  `deleted_at` timestamp(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for course_tag
+-- ----------------------------
+DROP TABLE IF EXISTS `course_tag`;
+CREATE TABLE `course_tag`  (
+  `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `tag_id` int(11) NULL DEFAULT NULL,
+  `course_id` int(11) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for experts
+-- ----------------------------
+DROP TABLE IF EXISTS `experts`;
+CREATE TABLE `experts`  (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `realname` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '专家姓名',
+  `introduction` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '专家介绍',
+  `pic` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '专家照片',
+  `agency` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '所属机构',
+  `qualification` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '专业资质',
+  `certificate_number` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '证书编号',
+  `created_at` timestamp(0) NULL DEFAULT NULL,
+  `updated_at` timestamp(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of experts
+-- ----------------------------
+INSERT INTO `experts` VALUES (1, '朱瑾', '个人说明： 教育学学士，副教授，现任职于常州开放大学图书馆馆长以及学校心理服务中心负责人。国家高级婚姻家庭咨询师。擅长儿童心理辅导、家庭教育辅导、家庭教育演讲。亲子沟通、情绪、职业规划类等问题的咨询辅导。', 'images/51c6585c42010208c37651e803f250c7.png', '心理咨询机构', '国家二级心理咨询师', '0610000008200491', '2019-07-16 10:29:24', '2019-07-16 10:32:48');
+
+-- ----------------------------
+-- Table structure for images
+-- ----------------------------
+DROP TABLE IF EXISTS `images`;
+CREATE TABLE `images`  (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `sort` int(10) UNSIGNED NOT NULL COMMENT '排序',
+  `pic` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '图片路径',
+  `category_id` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '分类id',
+  `about` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '关联模块',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for migrations
@@ -720,6 +970,49 @@ CREATE TABLE `password_resets`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   INDEX `password_resets_email_index`(`email`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for substations
+-- ----------------------------
+DROP TABLE IF EXISTS `substations`;
+CREATE TABLE `substations`  (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '分站名称',
+  `working_time` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '工作时间',
+  `phone` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `location` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '分站地址',
+  `pic` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '图片',
+  `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '内容',
+  `deleted_at` timestamp(0) NULL DEFAULT NULL,
+  `created_at` timestamp(0) NULL DEFAULT NULL,
+  `updated_at` timestamp(0) NULL DEFAULT NULL,
+  `sort` int(10) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for tags
+-- ----------------------------
+DROP TABLE IF EXISTS `tags`;
+CREATE TABLE `tags`  (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of tags
+-- ----------------------------
+INSERT INTO `tags` VALUES (1, '人际关系');
+INSERT INTO `tags` VALUES (2, '学习习惯');
+INSERT INTO `tags` VALUES (3, '个人成长');
+INSERT INTO `tags` VALUES (4, '行为表现');
+INSERT INTO `tags` VALUES (5, '电话咨询技能培训');
+INSERT INTO `tags` VALUES (6, '心理咨询技能培训');
+INSERT INTO `tags` VALUES (7, '危机干预技能培训');
+INSERT INTO `tags` VALUES (8, '小学');
+INSERT INTO `tags` VALUES (9, '初中');
+INSERT INTO `tags` VALUES (10, '高中');
 
 -- ----------------------------
 -- Table structure for users

@@ -3,6 +3,7 @@
 namespace App\Admin\Controllers;
 
 use App\Article;
+use App\Category;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -59,22 +60,25 @@ class ArticleController extends AdminController
     protected function form()
     {
         $form = new Form(new Article);
-        $directors = [
-            1 => 'John',
-            2 => 'Smith',
-            3 => 'Kate' ,
-        ];
+        $cate=Category::where('pid',1)->get();
+        $categories=[];
+        if($cate){
+            foreach ($cate as $k=>$v){
+                $categories[$v['id']]=$v['name'];
+            }
+        }
+//        dd($categories);
         
-        $form->select('cate_id', '分类')->options($directors);
-        $form->text('name', '标题');
+        $form->select('cate_id', '分类')->options($categories)->required();
+        $form->text('name', '标题')->required();
         // $form->image('pic','封面图');
-        $form->cropper('pic','封面图');
-        $form->text('sort', '排序');
-        $form->text('source', '来源');
+        $form->cropper('pic','封面图')->required();
+        $form->text('sort', '排序')->required();
+        $form->text('source', '来源')->required();
         // $form->text('source', '内容');
-        $form->ueditor('content','内容');
-        $form->datetime('date', '发布时间');
-    
+        $form->ueditor('content','内容')->required();
+        $form->datetime('date', '发布时间')->required();
+
         return $form;
     }
 }
