@@ -69,16 +69,16 @@ class ArticleController extends AdminController
         }
 //        dd($categories);
         
-        $form->select('cate_id', '分类')->options($categories);
-        $form->text('name', '标题');
+        $form->select('cate_id', '分类')->options($categories)->required();
+        $form->text('name', '标题')->required();
         // $form->image('pic','封面图');
-        $form->cropper('pic','封面图');
-        $form->text('sort', '排序');
-        $form->text('source', '来源');
+        $form->cropper('pic','封面图')->required();
+        $form->text('sort', '排序')->required();
+        $form->text('source', '来源')->required();
         // $form->text('source', '内容');
-        $form->ueditor('content','内容');
-        $form->datetime('date', '发布时间');
-    
+        $form->ueditor('content','内容')->required();
+        $form->datetime('date', '发布时间')->required();
+
         return $form;
     }
 }
