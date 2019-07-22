@@ -18,8 +18,7 @@ class AppServiceProvider extends ServiceProvider
     {
 //       Course::observe(CourseObserver::class);
        Course::saved(function (Course $course){
-           $data[]=['tag_id'=>$course->tag_id,'course_id'=>$course->id];
-           CourseTag::create($data);
+
        });
     }
 

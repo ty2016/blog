@@ -17,10 +17,10 @@ class Course extends Model
     protected static function boot()
     {
         parent::boot();
-
-        static::addGlobalScope('tag_id', function(Builder $builder) {
+        Course::observe(CourseObserver::class);
+//        static::addGlobalScope('tag_id', function(Builder $builder) {
 //           dd($builder->value('tag_id'));
-        });
+//        });
     }
     /**
      * 此模型的事件映射.
@@ -28,6 +28,8 @@ class Course extends Model
      * @var array
      */
     protected $dispatchesEvents = [
-        'saved' => CourseObserver::class
+        'saved' => CourseObserver::class,
+        'updated' => CourseObserver::class
     ];
+
 }
