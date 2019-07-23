@@ -31,8 +31,9 @@ class CourseController extends AdminController
     {
         $grid = new Grid(new Course);
         $grid->column('id', __('编号'));
-
-
+        $grid->title('视频标题');
+        $grid->pic('视频封面图')->image();
+        $grid->is_push('是否推荐');
         return $grid;
     }
 
@@ -81,18 +82,19 @@ class CourseController extends AdminController
         $mcateModel = config('admin.database.cate_model');
         $form->select('category_id', trans('视频分类'))->options($mcateModel::selectOptions())->required();
         $form->select('experts_id', trans('老师'))->options(Expert::getName())->required();
-        $form->cropper('pic', '视频封面图');
-        $form->switch('is_push', '是否推荐');
-        $form->url('video', '视频地址');
-        $form->textarea('summary', '视频简介');
+        $form->cropper('pic', '视频封面图')->rules('required');
+        $form->switch('is_push', '是否推荐')->rules('required');
+        $form->url('video', '视频地址')->rules('required');
+        $form->textarea('summary', '视频简介')->rules('required');
         $tag = Tag::all();
+      
         $tags = [];
         if ($tag) {
             foreach ($tag as $k => $v) {
                 $tags[$v['id']] = $v['title'];
             }
         }
-        $form->listbox('tag_id', '标签')->options($tags);
+        $form->listbox('tag_id', '标签')->options($tags)->rules('required');
         return $form;
     }
 }
