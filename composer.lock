@@ -435,16 +435,16 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "2.1.9",
+            "version": "2.1.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "128cc721d771ec2c46ce59698f4ca42b73f71b25"
+                "reference": "a6c8d7101b19a451c1707b1b79bbbc56e4bdb7ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/128cc721d771ec2c46ce59698f4ca42b73f71b25",
-                "reference": "128cc721d771ec2c46ce59698f4ca42b73f71b25",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/a6c8d7101b19a451c1707b1b79bbbc56e4bdb7ec",
+                "reference": "a6c8d7101b19a451c1707b1b79bbbc56e4bdb7ec",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -460,7 +460,8 @@
             "require-dev": {
                 "dominicsayers/isemail": "dev-master",
                 "phpunit/phpunit": "^4.8.35||^5.7||^6.0",
-                "satooshi/php-coveralls": "^1.0.1"
+                "satooshi/php-coveralls": "^1.0.1",
+                "symfony/phpunit-bridge": "^4.4@dev"
             },
             "suggest": {
                 "ext-intl": "PHP Internationalization Libraries are required to use the SpoofChecking validation"
@@ -494,20 +495,20 @@
                 "validation",
                 "validator"
             ],
-            "time": "2019-06-23T10:14:27+00:00"
+            "time": "2019-07-19T20:52:08+00:00"
         },
         {
             "name": "encore/laravel-admin",
-            "version": "v1.7.2",
+            "version": "v1.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/z-song/laravel-admin.git",
-                "reference": "6306ab390c6194a8cd847bcdc6232669de32b3bb"
+                "reference": "1696ae76863fc7b60ed2c717caef547dc39c30d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/6306ab390c6194a8cd847bcdc6232669de32b3bb",
-                "reference": "6306ab390c6194a8cd847bcdc6232669de32b3bb",
+                "url": "https://api.github.com/repos/z-song/laravel-admin/zipball/1696ae76863fc7b60ed2c717caef547dc39c30d3",
+                "reference": "1696ae76863fc7b60ed2c717caef547dc39c30d3",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -571,7 +572,7 @@
                 "grid",
                 "laravel"
             ],
-            "time": "2019-06-23T10:12:08+00:00"
+            "time": "2019-07-24T03:27:03+00:00"
         },
         {
             "name": "erusev/parsedown",

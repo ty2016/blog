@@ -14,14 +14,7 @@ class Course extends Model
     {
         $this->attributes['tag_id'] = implode(',',$value);
     }
-    protected static function boot()
-    {
-        parent::boot();
-        Course::observe(CourseObserver::class);
-//        static::addGlobalScope('tag_id', function(Builder $builder) {
-//           dd($builder->value('tag_id'));
-//        });
-    }
+  
     /**
      * 此模型的事件映射.
      *

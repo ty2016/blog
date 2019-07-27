@@ -16,10 +16,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-//       Course::observe(CourseObserver::class);
-       Course::saved(function (Course $course){
-
-       });
+       Course::observe(CourseObserver::class);
     }
 
     /**
